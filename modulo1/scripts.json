@@ -1,0 +1,48 @@
+query {
+	ola
+  dataAtual
+  usuarioLogado {
+    id
+    nome
+    email
+    idade
+    salario
+  	vip
+    perfil {
+      nome
+    }
+  }
+  produtoEmDestaque {
+    nome
+    preco
+    desconto
+    precoComDesconto
+  }
+  numerosMegaSena
+  usuarios {
+		...usuarioCompleto
+  }
+  usuario(id: 3) {
+    ...usuarioCompleto
+  }
+  perfis {
+		id,
+    nome
+  }
+  perfil(id: 2) {	
+		id
+  	nome
+  }
+}
+
+fragment usuarioCompleto on Usuario {
+	id
+  nome
+  email
+  idade
+  salario
+  vip
+  perfil {
+    nome
+  }
+}
